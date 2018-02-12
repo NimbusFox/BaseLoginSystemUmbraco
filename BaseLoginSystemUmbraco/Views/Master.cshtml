@@ -1,0 +1,18 @@
+﻿@using BaseLoginSystemUmbraco.CodeLibraries.Core
+@using BaseLoginSystemUmbraco.Models
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var master = new MasterModel(Model.Content);
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@(PageHelper.GetTitle(Model.Content))</title>
+    @RenderSection("css", false)
+    @RenderSection("js", false)
+</head>
+<body class="body-content container">
+    @RenderBody()
+</body>
+</html>
