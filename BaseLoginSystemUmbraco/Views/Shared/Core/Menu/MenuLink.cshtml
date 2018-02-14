@@ -1,0 +1,4 @@
+﻿@model BaseLoginSystemUmbraco.Models.Core.Menu.MenuLinkModel
+<li class="nav-item" >
+    <a class="nav-link" href="@Model.GetUrl()"@(Model.NewTab ? " target=_blank" : "")>@Model.Text</a>
+</li>

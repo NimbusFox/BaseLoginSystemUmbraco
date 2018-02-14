@@ -1,8 +1,9 @@
-﻿@using BaseLoginSystemUmbraco.Models.Core
+﻿@using BaseLoginSystemUmbraco.CodeLibraries.Core
+@using BaseLoginSystemUmbraco.Models.Core
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = "Master.cshtml";
-    var site = new SiteModel(Model.Content);
+    var site = new SiteModel(GlobalHelper.GetRoot());
 }
 @section js {
     @Scripts.Render("~/bundles/Scripts")
@@ -13,5 +14,8 @@
 @if (Request.Path != "/") {
     @RenderBody()
 } else {
-    Html.RenderPartial("~/Views/Shared/ContentBuilder/Core/Page.cshtml", site.Pages.DefaultPage);
+    Html.RenderPartial("~/Views/Shared/Core/Page.cshtml", site.Pages.DefaultPage);
+}
+@if (site.Menu != null) {
+    Html.RenderAction("menuRoot", "ContentBuilder", new {page = site.Menu});
 }

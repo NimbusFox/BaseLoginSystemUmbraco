@@ -6,11 +6,11 @@ using Umbraco.Core.Models;
 using Umbraco.Web;
 
 namespace BaseLoginSystemUmbraco.Models.Core {
-    public class SitePages {
+    public class SitePagesModel {
         public IPublishedContent DefaultPage { get; }
         private List<IPublishedContent> defaultItem { get; } = new List<IPublishedContent>();
 
-        public SitePages(IPublishedContent page) {
+        public SitePagesModel(IPublishedContent page) {
             DefaultPage = page.GetPropertyValue("defaultPage", defaultItem).FirstOrDefault();
         }
     }

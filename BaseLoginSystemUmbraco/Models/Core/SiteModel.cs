@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Umbraco.Core.Models;
+using Umbraco.Web;
 
 namespace BaseLoginSystemUmbraco.Models.Core {
     public class SiteModel : MasterModel {
-        public SitePages Pages { get; }
+        public SitePagesModel Pages { get; }
+        public IPublishedContent Menu { get; }
 
         public SiteModel(IPublishedContent page) : base(page) {
-            Pages = new SitePages(page);
+            Pages = new SitePagesModel(page);
+            Menu = page.GetPropertyValue("menu", new List<IPublishedContent>()).FirstOrDefault();
         }
     }
 }

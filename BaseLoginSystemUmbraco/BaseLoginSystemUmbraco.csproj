@@ -308,7 +308,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Core\SitePages.cs" />
+    <Compile Include="Models\Core\ContentBuilder\ContentModel.cs" />
+    <Compile Include="Models\Core\Menu\MenuDropdownModel.cs" />
+    <Compile Include="Models\Core\Menu\MenuLinkModel.cs" />
+    <Compile Include="Models\Core\Menu\MenuRootModel.cs" />
+    <Compile Include="Models\Core\SitePagesModel.cs" />
     <Compile Include="Models\MasterModel.cs" />
     <Compile Include="Models\Core\SiteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -450,8 +454,12 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Master.cshtml" />
     <Content Include="Views\Site.cshtml" />
-    <Content Include="Views\Shared\ContentBuilder\Core\Page.cshtml" />
+    <Content Include="Views\Shared\Core\Page.cshtml" />
     <Content Include="Views\Page.cshtml" />
+    <Content Include="Views\Shared\Core\Menu\MenuDropdown.cshtml" />
+    <Content Include="Views\Shared\Core\Menu\MenuLink.cshtml" />
+    <Content Include="Views\Shared\Core\Menu\MenuRoot.cshtml" />
+    <Content Include="Views\Shared\Core\ContentBuilder\Content.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

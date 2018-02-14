@@ -1,0 +1,4 @@
+﻿@model IPublishedContent
+@foreach (var child in Model.Children) {
+    Html.RenderAction(child.DocumentTypeAlias, "ContentBuilder", new { page = child });
+}
